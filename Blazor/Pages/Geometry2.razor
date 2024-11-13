@@ -1,4 +1,4 @@
-@page "/Geometria"
+@page "/Geometry2"
 
 <PageTitle>Circumference and Area</PageTitle>
 <h1>Circumference and Area</h1>
@@ -11,6 +11,8 @@
               <option value="square">Square</option>
               <option value="circle">Circle</option>
               <option value="rectangle">Rectangle</option>
+              <option value="elipse">Rectangle</option>
+              
             </select>
         </td>
     </tr>
@@ -20,7 +22,7 @@
             <input style="text-align:right" @bind="x"/>
         </td>
     </tr>
-    @if (shape == "rectangle")
+    @if (shape == "rectangle" || shape =="elipse" )
     {
         <tr>
             <td>Second argument:</td>
@@ -65,17 +67,28 @@
         System.Console.WriteLine("Shape: " + shape + ". x: " + x + ".");
         if (shape == "circle")
         {
+            case "circle";
             circumference = 2 * pi * x;
             area = pi * x * x;
+            break;
         }
         else if (shape == "square")
         {
+            case "square"
             circumference = 4 * x;
             area = x * x;
+            break;
         }
         else if (shape == "rectangle")
         {
+
             circumference = 2 * (x + y);
+            area = x * y;
+        }
+
+         else if (shape == "elipse")
+        {
+            circumference = Math.sqrt((x*x)+(y*y)) * pi;
             area = x * y;
         }
         else
