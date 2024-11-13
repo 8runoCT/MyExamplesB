@@ -32,7 +32,7 @@ You can try to enter integers, real numbers and texts that are not numbers at al
             <button @onclick="Maximum">Determine Maximum</button> &nbsp;
             <button @onclick="Sum">Determine Sum</button> &nbsp;
             <button @onclick="Product">Determine Product</button &nbsp;
-            
+
         </td>
     </tr>
     <tr>
@@ -76,5 +76,15 @@ You can try to enter integers, real numbers and texts that are not numbers at al
         if (t > max)
             max = t;
         result = max;
+    }
+
+    private void Sum()
+    {
+        result = x+y+z+w+t;
+    }
+
+     private void Product()
+    {
+        result = x*y*z*w*t;
     }
 }
